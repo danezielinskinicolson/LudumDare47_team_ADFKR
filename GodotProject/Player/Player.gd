@@ -18,7 +18,7 @@ onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 
-func _physics_process(delta):
+func _process(delta):
 	match state:
 		MOVE:
 			move_state(delta)
@@ -50,8 +50,9 @@ func move_state(delta):
 	
 	if Input.is_action_just_pressed("attack"):
 		state = ATTACK
+		
 func attack_state(delta):
-	print("attack state")
+	velocity = Vector2.ZERO
 	animationState.travel("attack")
 	pass
 	

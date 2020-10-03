@@ -1,10 +1,11 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://world/Bush.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Textures/Action RPG Resources/World/GrassBackground.png" type="Texture" id=3]
 [ext_resource path="res://Textures/Action RPG Resources/World/DirtTileset.png" type="Texture" id=4]
 [ext_resource path="res://Textures/Action RPG Resources/World/CliffTileset.png" type="Texture" id=5]
+[ext_resource path="res://world/grass.tscn" type="PackedScene" id=6]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -497,11 +498,33 @@ tile_data = PoolIntArray( 7, 0, 196608, 8, 0, 196609, 9, 0, 7, 65540, 0, 0, 6554
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 64, 32 )
 
-[node name="Bush" parent="YSort" instance=ExtResource( 2 )]
+[node name="bushes" type="YSort" parent="YSort"]
+
+[node name="Bush" parent="YSort/bushes" instance=ExtResource( 2 )]
 position = Vector2( 32, 16 )
 
-[node name="Bush2" parent="YSort" instance=ExtResource( 2 )]
+[node name="Bush2" parent="YSort/bushes" instance=ExtResource( 2 )]
 position = Vector2( 104, 24 )
 
-[node name="Bush3" parent="YSort" instance=ExtResource( 2 )]
+[node name="Bush3" parent="YSort/bushes" instance=ExtResource( 2 )]
 position = Vector2( 56, 64 )
+
+[node name="grass" type="YSort" parent="YSort"]
+
+[node name="grass" parent="YSort/grass" instance=ExtResource( 6 )]
+position = Vector2( 96, 112 )
+
+[node name="grass2" parent="YSort/grass" instance=ExtResource( 6 )]
+position = Vector2( 232, 112 )
+
+[node name="grass3" parent="YSort/grass" instance=ExtResource( 6 )]
+position = Vector2( 88, 152 )
+
+[node name="grass4" parent="YSort/grass" instance=ExtResource( 6 )]
+position = Vector2( 48, 112 )
+
+[node name="grass5" parent="YSort/grass" instance=ExtResource( 6 )]
+position = Vector2( 248, 160 )
+
+[node name="grass6" parent="YSort/grass" instance=ExtResource( 6 )]
+position = Vector2( 232, 56 )
