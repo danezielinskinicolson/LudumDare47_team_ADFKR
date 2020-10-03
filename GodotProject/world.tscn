@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://world/Bush.tscn" type="PackedScene" id=2]
@@ -7,7 +7,9 @@
 [ext_resource path="res://Textures/Action RPG Resources/World/CliffTileset.png" type="Texture" id=5]
 [ext_resource path="res://world/grass.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Enemies/Head.tscn" type="PackedScene" id=8]
 [ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://world/HeadPlate.tscn" type="PackedScene" id=10]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -477,11 +479,14 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [node name="world" type="Node"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 160, 89 )
+position = Vector2( 160, 88 )
 scale = Vector2( 1, 0.988889 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( -53, -96, 525, 389 )
+
+[node name="HeadPlate" parent="Sprite" instance=ExtResource( 10 )]
+position = Vector2( 208, 96.0674 )
 
 [node name="DirtPathTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
@@ -543,6 +548,9 @@ position = Vector2( 48, 112 )
 
 [node name="Bat3" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 24, 96 )
+
+[node name="Head" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 232, 144 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

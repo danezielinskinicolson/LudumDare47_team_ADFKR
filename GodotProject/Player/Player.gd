@@ -1,4 +1,5 @@
 extends KinematicBody2D
+const PlayerPainSound = preload("res://Player/PlayerPain.tscn")
 
 var velocity = Vector2.ZERO
 export var MAX_SPEED = 120
@@ -81,3 +82,5 @@ func _on_Hurtbox_area_entered(area):
 	stats.health -= 1
 	hurtBox.start_invincibility(0.5)
 	hurtBox.create_hit_effect()
+	var playerHurtSounds = PlayerPainSound.instance()
+	get_tree().current_scene.add_child(playerHurtSounds)
