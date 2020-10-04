@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Textures/PlayerWalk.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://sounds/sword.wav" type="AudioStream" id=6]
 [ext_resource path="res://Textures/Action RPG Resources/Shadows/MediumShadow.png" type="Texture" id=7]
 [ext_resource path="res://Player/light_shader.shader" type="Shader" id=8]
+[ext_resource path="res://Textures/sword.png" type="Texture" id=9]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 8 )
@@ -130,6 +131,42 @@ tracks/8/keys = {
 "update": 1,
 "values": [ 192, 193, 194, 195 ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("OnHand:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 5, -16 ), Vector2( -1, 5 ), Vector2( -10, 4 ), Vector2( -14, -5 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("OnHand:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0.0, 180.0, 213.3, 253.9 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("OnHand:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=4]
 length = 0.4
@@ -245,6 +282,54 @@ tracks/8/keys = {
 "update": 1,
 "values": [ 184, 185, 186, 187 ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("OnHand:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("OnHand:show_behind_parent")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("OnHand:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -4, -17 ), Vector2( -9, -14 ), Vector2( -9, 5 ), Vector2( 2, 7 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("OnHand:rotation_degrees")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ -3.6, -18.4, -140.3, -177.2 ]
+}
 
 [sub_resource type="Animation" id=5]
 length = 0.4
@@ -359,6 +444,54 @@ tracks/8/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 188, 189, 190, 191 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("OnHand:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("OnHand:show_behind_parent")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("OnHand:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 2, -18 ), Vector2( 15, -7 ), Vector2( 7, 5 ), Vector2( -2, 7 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("OnHand:rotation_degrees")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ -7.4, 81.2, 151.4, 177.2 ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -1042,7 +1175,7 @@ position = Vector2( 0, -9 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 40
-frame = 112
+frame = 111
 
 [node name="shoes" type="Sprite" parent="."]
 material = SubResource( 1 )
@@ -1050,7 +1183,7 @@ position = Vector2( 0, -9 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 40
-frame = 72
+frame = 71
 
 [node name="body" type="Sprite" parent="."]
 material = SubResource( 1 )
@@ -1058,7 +1191,7 @@ position = Vector2( 0, -9 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 40
-frame = 32
+frame = 31
 
 [node name="legs" type="Sprite" parent="."]
 material = SubResource( 1 )
@@ -1066,7 +1199,13 @@ position = Vector2( 0, -9 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 40
-frame = 152
+frame = 151
+
+[node name="OnHand" type="Sprite" parent="."]
+visible = false
+position = Vector2( -2, 7 )
+rotation = 3.09272
+texture = ExtResource( 9 )
 
 [node name="arms" type="Sprite" parent="."]
 material = SubResource( 1 )
@@ -1074,7 +1213,7 @@ position = Vector2( 0, -9 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 40
-frame = 192
+frame = 191
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -1106,12 +1245,12 @@ parameters/run/blend_position = Vector2( -0.607656, -0.0474138 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
 position = Vector2( 0, -4 )
-rotation = 1.5708
 __meta__ = {
 "_gizmo_extents_": 16.0
 }
 
 [node name="SwordHitbox" parent="HitboxPivot" instance=ExtResource( 3 )]
+visible = false
 position = Vector2( 15, 0 )
 collision_mask = 8
 script = ExtResource( 4 )
@@ -1122,6 +1261,7 @@ shape = SubResource( 36 )
 disabled = true
 
 [node name="Hurtbox" parent="." instance=ExtResource( 5 )]
+visible = false
 collision_layer = 4
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
@@ -1137,6 +1277,7 @@ position = Vector2( 0, 2 )
 texture = ExtResource( 7 )
 
 [node name="ItemPickUp" type="Area2D" parent="."]
+visible = false
 collision_layer = 128
 collision_mask = 128
 

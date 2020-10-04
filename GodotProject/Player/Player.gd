@@ -1,5 +1,8 @@
 extends KinematicBody2D
 const PlayerPainSound = preload("res://Player/PlayerPain.tscn")
+const Sword = preload("res://Textures/sword.png")
+const Key = preload("res://Textures/key.png")
+
 var velocity = Vector2.ZERO
 export var MAX_SPEED = 120
 export var ACC = 500
@@ -21,6 +24,14 @@ onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox = $HitboxPivot/SwordHitbox
 onready var hurtBox = $Hurtbox
+onready var ItemSprite = $OnHand
+
+var Item = Key
+func _unhandled_input(event):
+	if event.is_action_pressed("attack"):
+		ItemSprite.texture = Sword
+	elif event.is_action_pressed("use_item"):
+		ItemSprite.texture = Item
 
 func _ready():
 	randomize()
@@ -35,7 +46,7 @@ func _physics_process(delta):
 		ATTACK:
 			attack_state(delta)
 		INVEN:
-			pass
+			attack_state(delta)
 		INTERACT:
 			pass
 	
@@ -63,6 +74,9 @@ func move_state(delta):
 		state = ATTACK
 		print(swordHitbox.knockback_vector)
 		
+	if Input.is_action_just_pressed("use_item"):
+		state = INVEN
+	
 func attack_state(delta):
 	velocity = Vector2.ZERO
 	animationState.travel("attack")
