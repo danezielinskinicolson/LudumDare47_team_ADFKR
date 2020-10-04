@@ -1,6 +1,7 @@
 extends KinematicBody2D
 const EnemeyDeathEffect = preload("res://Enemies/EnemyDeathEffect.tscn")
-
+const Hdrop = preload("res://HealthDrop.tscn")
+	
 export var ACC = 300
 export var MAX_SPEED = 50
 export var FRIC = 200
@@ -15,6 +16,8 @@ enum{
 var state = IDLE
 var velocity = Vector2.ZERO
 var knockback = Vector2.ZERO
+var rng = RandomNumberGenerator.new()
+
 onready var stats = $Stats
 onready var playerDetectionZone = $PlayerDetection
 onready var sprite = $AnimatedSprite
@@ -24,6 +27,7 @@ onready var wanderController = $WanderController
 
 func _ready():
 	state = pick_random_state([IDLE,WANDER])
+	rng.randomize()
 
 
 func _physics_process(delta):
@@ -89,3 +93,7 @@ func _on_Stats_no_health():
 	var enemyDeathEffect = EnemeyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
+	if rng.randi_range(0,1) == 1:
+		var hdrop = Hdrop.instance()
+		get_tree().current_scene.add_child(hdrop)
+		hdrop.global_position = global_position
