@@ -607,7 +607,7 @@ position = Vector2( 104, 24 )
 position = Vector2( 56, 64 )
 
 [node name="Bush4" parent="YSort/bushes" instance=ExtResource( 15 )]
-position = Vector2( 568, -80 )
+position = Vector2( 608, -40 )
 
 [node name="grass" type="YSort" parent="YSort"]
 
