@@ -2,7 +2,7 @@ extends KinematicBody2D
 const PlayerPainSound = preload("res://Player/PlayerPain.tscn")
 const Sword = preload("res://Textures/sword.png")
 const Key = preload("res://Textures/key.png")
-
+const Log = preload("res://Textures/log.png")
 var velocity = Vector2.ZERO
 export var MAX_SPEED = 120
 export var ACC = 500
@@ -25,8 +25,7 @@ onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox = $HitboxPivot/SwordHitbox
 onready var hurtBox = $Hurtbox
 onready var ItemSprite = $OnHand
-
-var Item = Key
+var Item
 func _unhandled_input(event):
 	if event.is_action_pressed("attack"):
 		ItemSprite.texture = Sword
@@ -38,7 +37,7 @@ func _ready():
 	stats.connect("no_health", self, "queue_free")
 	animationTree.active = true
 	swordHitbox.knockback_vector = rollvector
-	
+	Item = Key
 func _physics_process(delta):
 	match state:
 		MOVE:
@@ -46,7 +45,7 @@ func _physics_process(delta):
 		ATTACK:
 			attack_state(delta)
 		INVEN:
-			attack_state(delta)
+			inventory_state(delta)
 		INTERACT:
 			pass
 	
@@ -76,14 +75,29 @@ func move_state(delta):
 		
 	if Input.is_action_just_pressed("use_item"):
 		state = INVEN
-	
+		print("INVE")
+	if Input.is_action_just_pressed("swap_item"):
+		print(stats.currentInventory.size())
+		if stats.itemIndex < (stats.currentInventory.size() - 1):
+			stats.itemIndex += 1
+		else:
+			stats.itemIndex = 0
+		stats.item = stats.currentInventory[stats.itemIndex]
+		print(stats.item)
+			
 func attack_state(delta):
 	velocity = Vector2.ZERO
 	animationState.travel("attack")
 	pass
 	
 func inventory_state(delta):
-	pass
+	velocity = Vector2.ZERO
+	if stats.item == "key":
+		Item = Key
+	if stats.item == "log":
+		Item = Log
+	ItemSprite.texture = Item
+	animationState.travel("attack")
 	
 func interact_state(delta):
 	pass	

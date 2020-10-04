@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://world/Bush.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://world/BigTree.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Textures/TreeTop.png" type="Texture" id=16]
 [ext_resource path="res://HealthDrop.tscn" type="PackedScene" id=17]
+[ext_resource path="res://UI/ItemUI.tscn" type="PackedScene" id=18]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -661,6 +662,18 @@ position = Vector2( 232, 144 )
 
 [node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 9 )]
 
+[node name="ItemUI" parent="CanvasLayer" instance=ExtResource( 18 )]
+margin_left = 18.0
+margin_top = 17.0
+margin_right = -286.0
+margin_bottom = -147.0
+
+[node name="TextureRect" parent="CanvasLayer/ItemUI" index="0"]
+margin_left = 6.0
+margin_top = 7.0
+margin_right = 22.0
+margin_bottom = 23.0
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 64, 32 )
 current = true
@@ -692,6 +705,8 @@ format = 1
 position = Vector2( -40, -8 )
 [connection signal="body_entered" from="PortalLeft" to="." method="_on_PortalLeft_body_entered"]
 [connection signal="body_entered" from="PortalRight" to="." method="_on_PortalRight_body_entered"]
+
+[editable path="CanvasLayer/ItemUI"]
 
 [editable path="PortalLeft"]
 
