@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://world/Bush.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://world/Portal.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Textures/GrassBad.png" type="Texture" id=13]
 [ext_resource path="res://Textures/TreeScape.png" type="Texture" id=14]
+[ext_resource path="res://world/BigTree.tscn" type="PackedScene" id=15]
 
 [sub_resource type="TileSet" id=1]
 0/name = "TreeScape.png 0"
@@ -604,6 +605,9 @@ position = Vector2( 104, 24 )
 
 [node name="Bush3" parent="YSort/bushes" instance=ExtResource( 2 )]
 position = Vector2( 56, 64 )
+
+[node name="Bush4" parent="YSort/bushes" instance=ExtResource( 15 )]
+position = Vector2( 568, -80 )
 
 [node name="grass" type="YSort" parent="YSort"]
 
