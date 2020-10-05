@@ -75,17 +75,19 @@ func move_state(delta):
 		print(swordHitbox.knockback_vector)
 		
 	if Input.is_action_just_pressed("use_item"):
-		state = INVEN
-		swordHitbox.set_collision_mask(256)
-		print("INVE")
+		if stats.currentInventory.size() > 0: 
+			state = INVEN
+			swordHitbox.set_collision_mask(256)
+			print("INVE")
 	if Input.is_action_just_pressed("swap_item"):
-		print(stats.currentInventory.size())
-		if stats.itemIndex < (stats.currentInventory.size() - 1):
-			stats.itemIndex += 1
-		else:
-			stats.itemIndex = 0
-		stats.item = stats.currentInventory[stats.itemIndex]
-		print(stats.item)
+		if stats.currentInventory.size() > 0: 
+			print(stats.currentInventory.size())
+			if stats.itemIndex < (stats.currentInventory.size() - 1):
+				stats.itemIndex += 1
+			else:
+				stats.itemIndex = 0
+			stats.item = stats.currentInventory[stats.itemIndex]
+			print(stats.item)
 			
 func attack_state(delta):
 	velocity = Vector2.ZERO

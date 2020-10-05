@@ -4,7 +4,7 @@ export(int) var max_health =  1
 onready var health = max_health setget set_health
 onready var item setget set_item
 onready var itemIndex = 0 setget set_itemIndex
-onready var currentInventory = ["log"] setget set_currentInventory
+onready var currentInventory = [] setget remove_currentInventory
 onready var pickedItem = "log"
 
 signal no_health
@@ -20,8 +20,11 @@ func set_health(value):
 func set_itemIndex(value):
 	itemIndex = value
 
-func set_currentInventory(value):
-	pass
+func remove_currentInventory(index):
+	currentInventory.remove(index)
+	if currentInventory == []:
+		set_item("none")
+		print("setting to none")
 	
 func set_item(value):
 	if value == "key":
@@ -30,4 +33,8 @@ func set_item(value):
 	if value == "log":
 		emit_signal("item_changed", "res://Textures/log.png")
 		item = value
+	if value == "none":
+		emit_signal("item_changed", "res://Textures/none.png")
+		item = value
+		print("setting to none 2")
 	print(item)

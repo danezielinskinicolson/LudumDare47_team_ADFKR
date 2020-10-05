@@ -78,6 +78,7 @@ margin_right = 240.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="menu/Logo"]
 position = Vector2( 152, 69 )
 frames = SubResource( 8 )
+frame = 11
 playing = true
 
 [node name="centreRow" type="HBoxContainer" parent="menu"]
