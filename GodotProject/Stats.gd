@@ -4,7 +4,8 @@ export(int) var max_health =  1
 onready var health = max_health setget set_health
 onready var item setget set_item
 onready var itemIndex = 0 setget set_itemIndex
-onready var currentInventory = ["key","log"] setget set_currentInventory
+onready var currentInventory = ["log"] setget set_currentInventory
+onready var pickedItem = "log"
 
 signal no_health
 signal health_changed(value)

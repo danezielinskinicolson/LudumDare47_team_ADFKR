@@ -121,5 +121,13 @@ func _player_dead():
 	
 
 func _on_ItemPickUp_area_entered(area):
-	stats.health += 1
+	print("picked item is")
+	print(stats.pickedItem)
+	if stats.pickedItem == "heart":
+		stats.health += 1
+		print("HEART")
+	elif stats.pickedItem == "key":
+		print("KEY")
+		stats.currentInventory.append("key")	
 	
+

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Textures/EasterHead.png" type="Texture" id=1]
 [ext_resource path="res://Title/Button.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Textures/Action RPG Resources/World/GrassBackground.png" type="Texture" id=3]
+[ext_resource path="res://Textures/background.png" type="Texture" id=3]
 [ext_resource path="res://Title/FadeIn.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Title/TitleScreen.gd" type="Script" id=5]
 
@@ -78,7 +78,6 @@ margin_right = 240.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="menu/Logo"]
 position = Vector2( 152, 69 )
 frames = SubResource( 8 )
-frame = 9
 playing = true
 
 [node name="centreRow" type="HBoxContainer" parent="menu"]

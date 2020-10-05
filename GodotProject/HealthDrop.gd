@@ -1,6 +1,7 @@
 extends Node2D
 
-
+export(String) var item 
+var stats = PlayerStats
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -17,4 +18,5 @@ func _ready():
 
 
 func _on_Bounds_area_entered(area):
+	stats.pickedItem = item
 	queue_free()
