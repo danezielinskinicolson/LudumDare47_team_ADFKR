@@ -71,10 +71,12 @@ func move_state(delta):
 	
 	if Input.is_action_just_pressed("attack"):
 		state = ATTACK
+		swordHitbox.set_collision_mask(8)
 		print(swordHitbox.knockback_vector)
 		
 	if Input.is_action_just_pressed("use_item"):
 		state = INVEN
+		swordHitbox.set_collision_mask(256)
 		print("INVE")
 	if Input.is_action_just_pressed("swap_item"):
 		print(stats.currentInventory.size())
