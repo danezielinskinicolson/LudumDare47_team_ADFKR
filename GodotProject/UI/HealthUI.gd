@@ -4,7 +4,7 @@ var hearts = 4 setget set_hearts
 var max_hearts = 4 setget set_max_hearts
 
 onready var HeartUI = $HeartUIEmpty
-
+onready var TryAgain = $TryAgain
 func set_hearts(value):
 	hearts =  clamp(value,0,max_hearts)
 	match hearts:
@@ -18,6 +18,8 @@ func set_hearts(value):
 			HeartUI.texture = load("res://Textures/1HeartUI.png")
 		0:
 			HeartUI.texture = load("res://Textures/0HeartUI.png")
+			TryAgain.show()
+			
 func set_max_hearts(value):
 	max_hearts = max(value, 1)
 	
@@ -25,3 +27,8 @@ func _ready():
 	self.max_hearts = PlayerStats.max_health
 	self.hearts = PlayerStats.health
 	PlayerStats.connect("health_changed", self, "set_hearts")
+
+func _on_TryAgain_button_down():
+	TryAgain.hide()
+	PlayerStats.set_health(4)
+	get_tree().reload_current_scene()

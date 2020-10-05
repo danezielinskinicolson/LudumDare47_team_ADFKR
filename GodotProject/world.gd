@@ -83,7 +83,7 @@ func spawnHead(position):
 
 func _on_Keyarea2_body_entered(body):
 	if Drums == false:
-		Music_Controller.musiclist.append("res://sounds/theme1_drums.wav")
+		Music_Controller.musiclist.append("res://sounds/theme1_drums1.wav")
 		Drums = true
 		spawnSlime(Vector2(-30,-30))
 		spawnSlime(Vector2(30,30))
@@ -92,6 +92,9 @@ func _on_Keyarea2_body_entered(body):
 
 
 func _on_HeadPlate2_pressure():
+	if Guitar == false:
+		Music_Controller.musiclist.append("res://sounds/theme1_melody1.wav")
+		Guitar = true
 	LeftportalBounds.set_deferred("disabled", true)
 
 
@@ -110,11 +113,8 @@ func _on_Keyarea3_body_entered(body):
 
 
 func _on_HeadPlate3_pressure():
-	if Guitar == false:
-		Music_Controller.musiclist.append("res://sounds/theme1_melody1.wav")
-		Guitar = true
 	UpportalBounds.set_deferred("disabled", true)
 
 
 func _on_Keyarea4_body_entered(body):
-	get_tree().change_scene("res://Title/TitleScreen.tscn")
+	get_tree().change_scene("res://Title/EndScreen.tscn")

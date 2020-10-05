@@ -15,6 +15,7 @@ __meta__ = {
 margin_right = 40.0
 margin_bottom = 14.0
 text = "Label"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
