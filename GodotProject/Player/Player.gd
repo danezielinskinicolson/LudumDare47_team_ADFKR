@@ -80,6 +80,7 @@ func move_state(delta):
 			state = INVEN
 			swordHitbox.set_collision_mask(256)
 			print("INVE")
+			
 	if Input.is_action_just_pressed("swap_item"):
 		if stats.currentInventory.size() > 0: 
 			print(stats.currentInventory.size())

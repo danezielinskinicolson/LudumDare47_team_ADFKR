@@ -1283,7 +1283,7 @@ position = Vector2( 0, -9 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 40
-frame = 119
+frame = 98
 
 [node name="shoes" type="Sprite" parent="."]
 material = SubResource( 1 )
@@ -1291,7 +1291,7 @@ position = Vector2( 0, -9 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 40
-frame = 79
+frame = 58
 
 [node name="body" type="Sprite" parent="."]
 material = SubResource( 1 )
@@ -1299,7 +1299,7 @@ position = Vector2( 0, -9 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 40
-frame = 39
+frame = 18
 
 [node name="legs" type="Sprite" parent="."]
 material = SubResource( 1 )
@@ -1307,12 +1307,11 @@ position = Vector2( 0, -9 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 40
-frame = 159
+frame = 140
 
 [node name="OnHand" type="Sprite" parent="."]
 visible = false
-position = Vector2( 22, -7 )
-rotation = 1.60919
+position = Vector2( 5, -16 )
 texture = ExtResource( 9 )
 
 [node name="arms" type="Sprite" parent="."]
@@ -1321,7 +1320,7 @@ position = Vector2( 0, -9 )
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 40
-frame = 199
+frame = 180
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -1353,7 +1352,7 @@ parameters/run/blend_position = Vector2( -0.607656, -0.0474138 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
 position = Vector2( 0, -4 )
-rotation = -1.5708
+rotation = 1.5708
 __meta__ = {
 "_gizmo_extents_": 16.0
 }

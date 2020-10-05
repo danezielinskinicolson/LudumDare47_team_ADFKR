@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/titlescreen.wav-a47b8ae99efd52bdec9c992af4c8f8ad.sample"
+
+[deps]
+
+source_file="res://sounds/titlescreen.wav"
+dest_files=[ "res://.import/titlescreen.wav-a47b8ae99efd52bdec9c992af4c8f8ad.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

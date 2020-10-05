@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Textures/EasterHead.png" type="Texture" id=1]
 [ext_resource path="res://Enemies/Head.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Hitbox/Hitbox.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Hitbox/SoftCollision.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Enemies/HeadPlateDetectionZone.tscn" type="PackedScene" id=9]
+[ext_resource path="res://sounds/heal.wav" type="AudioStream" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 4.0
@@ -53,6 +54,20 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, -1 ), Vector2( 0, -2 ), Vector2( 0, -1 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 10 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=7]
@@ -154,7 +169,7 @@ collision_layer = 16
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="Sprite" parent="."]
-position = Vector2( 0, -0.928303 )
+position = Vector2( 0, -1.46565 )
 texture = ExtResource( 1 )
 offset = Vector2( 0, -12 )
 hframes = 7
@@ -220,6 +235,9 @@ shape = SubResource( 20 )
 position = Vector2( 0, -3 )
 shape = SubResource( 21 )
 disabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 
