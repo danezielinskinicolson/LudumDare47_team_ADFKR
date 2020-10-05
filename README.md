@@ -1,2 +1,8 @@
 # LudumDare47_team_ADFKR
- Adam, Dane, Felix, Kayley, Ryan
+
+Team members:
+
+Adam (music),
+Dane (Programming),
+Kayley (art),
+Ryan (ideas man and play tester)
