@@ -134,8 +134,11 @@ func _on_ItemPickUp_area_entered(area):
 	elif stats.pickedItem == "key":
 		print("KEY")
 		stats.currentInventory.append("key")
+		stats.set_item("key")
 	elif stats.pickedItem == "torch":
 		print("TORCH")
-		stats.currentInventory.append("torch")		
+		stats.currentInventory.append("torch")
+		stats.set_item("torch")
+				
 	
 
