@@ -1,4 +1,4 @@
-# LudumDare47_team_ADFKR
+# LudumDare47_team_ADKR
 Game: Trials of the Twisted Timber Land
 Team members:
 
