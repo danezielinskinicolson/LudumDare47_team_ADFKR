@@ -1,5 +1,5 @@
 # LudumDare47_team_ADFKR
-Game: Twisty Timber Land
+Game: Trials of the Twisted Timber Land
 Team members:
 
 Adam (music),
