@@ -63,10 +63,10 @@ func _on_Keyarea_body_entered(body):
 	if stringsLow == false:
 		Music_Controller.musiclist.append("res://sounds/theme1_strings_low.wav")
 		stringsLow = true
-		spawnSlime(Vector2(-30,-30))
-		spawnSlime(Vector2(30,30))
-		spawnSlime(Vector2(-30,30))
-		spawnSlime(Vector2(30,-30))
+		spawnSlime(Vector2(-60,-60))
+		spawnSlime(Vector2(60,60))
+		spawnSlime(Vector2(-60,60))
+		spawnSlime(Vector2(60,-60))
 		
 func spawnSlime(position):
 	var slime = Slime.instance()
