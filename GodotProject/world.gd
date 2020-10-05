@@ -23,6 +23,7 @@ var bells = false
 var stringsLow = false
 var Drums = false
 var Guitar = false
+var Headflag = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Music_Controller.musiclist.append("res://sounds/theme1_piano.wav")
@@ -102,14 +103,16 @@ func _on_PortalUp_body_entered(body):
 
 
 func _on_Keyarea3_body_entered(body):
-	if Guitar == false:
-		Music_Controller.musiclist.append("res://sounds/theme1_melody1.wav")
-		Guitar = true
+	if Headflag == false:
+		Headflag = true
 		spawnHead(Vector2(-400,0))
 
 
 
 func _on_HeadPlate3_pressure():
+	if Guitar == false:
+		Music_Controller.musiclist.append("res://sounds/theme1_melody1.wav")
+		Guitar = true
 	UpportalBounds.set_deferred("disabled", true)
 
 
