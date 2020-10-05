@@ -2,7 +2,7 @@ extends KinematicBody2D
 const EnemeyDeathEffect = preload("res://Enemies/EnemyDeathEffect.tscn")
 
 export var ACC = 300
-export var MAX_SPEED = 30
+export var MAX_SPEED = 80
 export var FRIC = 200
 
 enum{

@@ -115,6 +115,10 @@ func _on_Hurtbox_area_entered(area):
 	var playerHurtSounds = PlayerPainSound.instance()
 	get_tree().current_scene.add_child(playerHurtSounds)
 
+func _player_dead():
+	get_tree().change_scene("res://Title/TitleScreen.tscn")
+	queue_free()
+	
 
 func _on_ItemPickUp_area_entered(area):
 	stats.health += 1
