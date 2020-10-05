@@ -1,0 +1,9 @@
+* If there's a pop noise in any of the .wavs (for some reason my software sometimes does that when exporting for who knows what reason), just lemme know and I'll try to reexport.
+
+* The melodies are twice as long as everything else, so to keep the lengths consistent every other .wav contains two loops. If it's possible to properly and consistently sync things up even if the melody is twice as long as the other ones, then I can reexport with only one loop for the rest, which will save a lot of megabytes.
+
+* There's also a melody2 in there (violin and flute version), but I'm honestly not to happy with it (couldn't get them both to sound the way I wanted). However, they're there just in case. (I sorta envisioned melody2 playing at the very start of the game with just the piano when the player is haplessly walking through the first few screens before the looping starts, and then when the looping starts melody2 gets replaced by the synth layer.)
+
+* I also added a strings layer with two variants, a low one for usual cases, and a high one for maybe areas with greater danger, or when the player is at low health or something.
+
+* A rough order for the layers coming in might be piano -> synth -> bells -> strings low -> drums, but of course it's easy to mix and match and many different combinations actually work quite decently.
