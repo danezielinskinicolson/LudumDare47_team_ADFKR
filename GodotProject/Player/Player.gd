@@ -2,6 +2,7 @@ extends KinematicBody2D
 const PlayerPainSound = preload("res://Player/PlayerPain.tscn")
 const Sword = preload("res://Textures/sword.png")
 const Key = preload("res://Textures/key.png")
+const Torch = preload("res://Textures/Torch.png")
 const Log = preload("res://Textures/log.png")
 var velocity = Vector2.ZERO
 export var MAX_SPEED = 120
@@ -98,6 +99,8 @@ func inventory_state(delta):
 	velocity = Vector2.ZERO
 	if stats.item == "key":
 		Item = Key
+	if stats.item == "torch":
+		Item = Torch
 	if stats.item == "log":
 		Item = Log
 	ItemSprite.texture = Item
@@ -130,6 +133,9 @@ func _on_ItemPickUp_area_entered(area):
 		print("HEART")
 	elif stats.pickedItem == "key":
 		print("KEY")
-		stats.currentInventory.append("key")	
+		stats.currentInventory.append("key")
+	elif stats.pickedItem == "torch":
+		print("TORCH")
+		stats.currentInventory.append("torch")		
 	
 

@@ -30,6 +30,9 @@ func set_item(value):
 	if value == "key":
 		emit_signal("item_changed", "res://Textures/key.png")
 		item = value
+	if value == "torch":
+		emit_signal("item_changed", "res://Textures/Torch.png")
+		item = value
 	if value == "log":
 		emit_signal("item_changed", "res://Textures/log.png")
 		item = value

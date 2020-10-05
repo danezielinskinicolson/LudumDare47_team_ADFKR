@@ -18,3 +18,4 @@ func _on_Start_button_down():
 
 func _on_FadeIn_fade_finished():
 	get_tree().change_scene(StartB.scene_to_load)
+	queue_free()
