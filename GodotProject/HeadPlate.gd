@@ -20,4 +20,4 @@ func _ready():
 func _on_Area2D_area_entered(area):
 	animationPlayer.play("pressure")
 	emit_signal("pressure")
-	
+	collision.set_deferred("disabled", true)

@@ -55,20 +55,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0, -1 ), Vector2( 0, -2 ), Vector2( 0, -1 ), Vector2( 0, 0 ) ]
 }
-tracks/2/type = "audio"
-tracks/2/path = NodePath("AudioStreamPlayer")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 10 )
-} ],
-"times": PoolRealArray( 0 )
-}
 
 [sub_resource type="Animation" id=7]
 resource_name = "Idle"
@@ -169,7 +155,7 @@ collision_layer = 16
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="Sprite" parent="."]
-position = Vector2( 0, -1.46565 )
+position = Vector2( 0, -0.5 )
 texture = ExtResource( 1 )
 offset = Vector2( 0, -12 )
 hframes = 7
